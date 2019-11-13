@@ -1,0 +1,25 @@
+body {
+	background-color: #484848;
+	color:#fff;
+}
+.container {
+	/*	background-color:#212121;*/
+	font-weight: bold;
+}
+.modal {
+	color: #fff !important;
+	font-weight: bold;
+}
+.modal-content {
+	background-color: #484848;
+}
+ul {
+	list-style-position: inside;
+}
+
+li {
+	margin-top:10px;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color:#FFF !important;
+}
