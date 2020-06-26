@@ -22,67 +22,61 @@
 		<div class="container-fluid">
 			<div class="row mt-2">
 				<div class="col-md-12">
-					<h1 class="text-center">Instrucciones de uso:</h1>
+					<h1 class="text-center">How to use this tool:</h1>
 					<ul class="list-group mt-5">
 						<li>
-							Introduce el enlace para compartir de Google Drive en el primer cajón:
+							Paste the Google Drive sharing url in the first text box:
 						</li>
-						<li>Ejemplo de enlaces válidos:
+						<li>
+							After you paasted the url, clic "Generate Direct Link" and you'll get the direct link in the 2nd text box.
+						</li>
+						<li>
+							Once you obtained direct link, you can use any of the blue buttons to copy to clipboard or you can save time clicking "Download file" and automatically the file will download.
+						</li>
+
+						<li>Here you some examples of valid urls:
 							<ul style="list-style-type:disc">
 								<li><span style="color:#0F0;">https://drive.google.com/file/d/....../view</span></li>
 								<li><span style="color:#0F0;">https://drive.google.com/open?id=......</span></li>
 							</ul>
 						</li>
-						<li>Ejemplo de enlace NO válido:
+						<li>Not valid links:
 							<ul style="list-style-type:disc">
 								<li><span style="color:#F00;">https://docs.google.com/.....</span></li>
 							</ul>
-						</li>
-						<li>
-							Una vez hayas introducido el su correspondiente hueco,pulsa "Generar enlace"
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="row mt-4">
 				<div class="col-md-12">
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="basic-addon1">Google Drive Share URL</span>
-						</div>
-						<input type="text" class="form-control" aria-describedby="basic-addon1" name="sharingurl" id="sharingurl">
-						<button id="generar" class="btn btn-block btn-success mt-2">
-							Generar enlace
-						</button>
-					</div>
-				</div>
-			</div>
-			<div class="row mt-4">
-				<div class="col-md-12">
-					<button id="borrar" class="btn btn-block btn-danger">
-						Borrar datos
+					<input type="text" placeholder="Paste Google Drive Sharing URL" class="form-control text-center" name="sharingurl" id="sharingurl">
+					<button id="generate" class="btn btn-block btn-success mt-2">
+						Generate Direct Link
 					</button>
 				</div>
 			</div>
-			<div class="row mt-4">
+			<div class="row mt-2">
 				<div class="col-md-12">
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text" id="basic-addon2">Google Drive Direct Link</span>
-						</div>
-						<input type="text" class="form-control" aria-describedby="basic-addon2" name="googlelink" id="googlelink" readonly>
-					</div>
+					<input type="text" placeholder="Generated Google Drive Direct Link" class="form-control text-center" name="googlelink" id="googlelink" readonly>
 				</div>
 			</div>
 			<div class="row mt-2">
 				<div class="col-md-6">
-					<button data-clipboard-target="#googlelink" id="copiar" class="btn btn-block btn-primary">
-						Copiar enlace al portapapeles
+					<button data-clipboard-target="#googlelink" id="copy" class="btn btn-block btn-primary">
+						Copy link to clipboard
 					</button>
 				</div>
 				<div class="col-md-6">
-					<button data-clipboard-target="#googlelink" id="descargar" class="btn btn-block btn-primary">
-						Descargar archivo
+					<button data-clipboard-target="#googlelink" id="download" class="btn btn-block btn-primary">
+						Download file
+					</button>
+				</div>
+			</div>
+			<div class="row mt-2 mb-2">
+				<div class="col-md-12">
+					<button id="borrar" class="btn btn-block btn-danger">
+						Clean data
 					</button>
 				</div>
 			</div>
@@ -101,7 +95,7 @@
 						<p id="errormsg"></p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-danger mt-2" data-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-danger mt-2" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>

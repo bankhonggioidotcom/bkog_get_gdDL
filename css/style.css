@@ -21,5 +21,11 @@ li {
 	margin-top:10px;
 }
 .form-control:disabled, .form-control[readonly] {
-    background-color:#FFF !important;
+	background-color:#FFF !important;
+}
+
+@media (max-width:768px) {
+	#download {
+	margin-top:10px;
+	}
 }

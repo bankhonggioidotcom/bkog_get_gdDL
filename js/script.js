@@ -2,11 +2,11 @@
 * Google Drive Link Generator
 */
 $(function () {
-	$('#generar').click(function () {
+	$('#generate').click(function () {
 		var sharingurl = $.trim($('#sharingurl').val());
 		if (sharingurl.length <= 0){
 			$('#modalerror').modal('show'); 
-			$('#errormsg').text('No has introducido ningún enlace en el cuadro de texto');
+			$('#errormsg').text("You didn't entered any URL in the textbox");
 			return;
 		}
 		var googleid = '';
@@ -27,32 +27,35 @@ $(function () {
 		}
 		else{
 			$('#modalerror').modal('show');
-			$('#errormsg').text('Por favor, introduce un enláce de para compartir de Google Drive válido');
+			$('#errormsg').text('Please, enter a valid Google Drive Sharing URL');
 			$('#sharingurl').val("");
 			$('#googlelink').val("");
 		}
 	});
 });
+
 $("#borrar").click(function () {
 	$('#sharingurl').val("");
 	$('#googlelink').val("");
 
 });
 
-$("#descargar").click(function () {
-	
+
+$("#download").click(function () {
+	var link = $('#googlelink').val();
+	window.location.href=link;
 });
 
-tippy('#copiar', {
-	content: "Copiado!",
+tippy('#copy', {
+	content: "Copied!",
 	placement: 'top',
 	animation: 'shift-away',
 	theme: 'material',
 	trigger: 'click',
 	delay: [0, 100],
 });
-var clipboard = new ClipboardJS('.btn');
 
+var clipboard = new ClipboardJS('#copy');
 clipboard.on('success', function(e) {
 	console.info('Action:', e.action);
 	console.info('Text:', e.text);
